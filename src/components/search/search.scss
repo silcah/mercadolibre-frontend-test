@@ -1,0 +1,49 @@
+.search {
+  display: flex;
+  height: 6rem;
+  width: 100%;
+  background: var(--primary-yellow);
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  height: 70%;
+}
+
+.search-box {
+  font-size: 1.8rem;
+  background-color: white;
+  width: 70%;
+  height: 70%;
+  border-radius: 5px;
+  margin-left: 3rem;
+
+  &--form {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+
+    &--input,
+    &--input:focus-visible {
+      flex: auto;
+      border-radius: inherit;
+      border: none;
+      padding: 1.3rem;
+      background: transparent;
+      outline: none;
+    }
+
+    &--button {
+      width: 4rem;
+      height: 100%d;
+      border-radius: inherit;
+      border: none;
+
+      img {
+        vertical-align: middle;
+      }
+    }
+  }
+}

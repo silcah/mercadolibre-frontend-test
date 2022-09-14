@@ -1,0 +1,10 @@
+.breadcrumb {
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+  font-size: 1.4rem;
+  color: #666666;
+
+  &__item:last-child {
+    font-weight: bold;
+  }
+}

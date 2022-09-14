@@ -1,0 +1,49 @@
+.product {
+  display: flex;
+  height: 20rem;
+  width: 100%;
+
+  &--picture {
+    border-radius: 0.4rem;
+    img {
+      width: 18rem;
+      height: 18rem;
+    }
+  }
+  &--info {
+    margin-left: 1.6rem;
+    display: flex;
+    width: 100%;
+    padding-right: 8rem;
+
+    &__city {
+      font-size: 1.2rem;
+      justify-content: flex-end;
+      padding-top: 6rem;
+    }
+
+    &__extra {
+      padding-top: 1.6rem;
+      flex: auto;
+    }
+
+    &__price {
+      font-size: 2.4rem;
+      margin-right: 1rem;
+
+      &__shipping {
+        width: 1.8rem;
+      }
+    }
+
+    &__title {
+      margin-top: 3.2rem;
+      font-size: 1.8rem;
+      width: 35rem;
+    }
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

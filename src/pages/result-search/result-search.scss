@@ -1,0 +1,16 @@
+.result {
+  width: 76%;
+}
+
+.product-list {
+  margin-top: 1.6rem;
+  margin-bottom: 8rem;
+  background: white;
+  padding: 1.6rem;
+
+  .product {
+    &:not(:last-child) {
+      border-bottom: 2px #eeeeee solid;
+    }
+  }
+}
