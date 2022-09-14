@@ -1,8 +1,9 @@
 # Mercado Libre Prueba Front
 
 El stack tecnológico usado en la aplicación es:
-Cliente: HTML, Sass, React.js
-Servidor: Express.js
+
+- Cliente: HTML, Sass, React.js
+- Servidor: Express.js
 
 Vistas:
 
@@ -19,5 +20,3 @@ Cliente:
 Servidor:
 
 ## `node server.js`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
