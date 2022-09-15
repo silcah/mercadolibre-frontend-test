@@ -1,4 +1,5 @@
 import "./breadcrumb.scss";
+
 function BreadCrumb({ categories }) {
   return (
     <div className="breadcrumb">

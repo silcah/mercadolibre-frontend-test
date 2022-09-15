@@ -1,11 +1,10 @@
 import * as React from "react";
+import "./detail-page.scss";
+import { useParams } from "react-router-dom";
+import BreadCrumb from "../../components/breadcrumb/breadcrumb";
 import { useAsync } from "../../utils/hooks";
 import { client } from "../../utils/api-client";
-import { useParams } from "react-router-dom";
 import currencyFormat from "../../utils/currency-format";
-
-import BreadCrumb from "../../components/breadcrumb/breadcrumb";
-import "./detail-page.scss";
 
 function DetailPage() {
   const { id: productId } = useParams();

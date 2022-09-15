@@ -11,7 +11,7 @@ function ProductCard({ productData }) {
           aria-labelledby={productData?.id}
           to={`/items/${productData?.id}`}
         >
-          <img src={productData?.picture} alt="thumbnail product"></img>
+          <img src={productData?.picture} alt="Detalle producro"></img>
         </Link>
       </div>
       <div className="product--info">
@@ -28,7 +28,7 @@ function ProductCard({ productData }) {
             {productData?.free_shipping ? (
               <img
                 srcSet={`${icnShipping} 1x, ${icnShipping2x} 2x`}
-                alt="free shipping"
+                alt="Envio gratis"
                 className="product--info__price__shipping"
               ></img>
             ) : null}

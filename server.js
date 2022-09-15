@@ -1,7 +1,7 @@
-const express = require("express"); //Line 1
+const express = require("express");
 const axios = require("axios");
-const app = express(); //Line 2
-const port = process.env.PORT || 3001; //Line 3
+const app = express();
+const port = 3001;
 
 //Mercado libre Endpoints
 const searchEndpoint = `https://api.mercadolibre.com/sites/MLA/search?q=`;
@@ -21,26 +21,29 @@ app.get("/backend", (req, res) => {
 
 app.get("/api/items", getSearch);
 
-app.get("/api/items/:id", getItemDetail); //Line 11
+app.get("/api/items/:id", getItemDetail);
 
 async function getSearch(req, res) {
   if (req.query && req.query.q) {
     const query = req.query.q;
 
-    const response = await axios.get(`${searchEndpoint}${query}`);
+    const response = await axios
+      .get(`${searchEndpoint}${query}`)
+      .catch(handleError);
+
     const items = response?.data?.results;
     let result = {
       author: {
         name: "Silvana",
         lastname: "Castro",
       },
-      categories: await getSearchCategories(response.data),
+      categories: await getSearchCategories(response?.data),
       items: [],
     };
 
     const shortenItems = items?.length >= 4 ? items.slice(0, 4) : items;
 
-    shortenItems.map((e) => {
+    shortenItems?.map((e) => {
       const item = {
         id: e.id,
         title: e.title,

@@ -1,13 +1,14 @@
 import * as React from "react";
 import "./search.scss";
 import { useNavigate, Link } from "react-router-dom";
-import { logo, logo2x, icnSearch, icnSearch2x } from "../../assets/images";
 import { useQuery } from "../../utils/query-provider";
+import { logo, logo2x, icnSearch, icnSearch2x } from "../../assets/images";
 
 function Search() {
   const [query, setQuery] = useQuery();
   const [queried, setQueried] = React.useState(false);
   const navigate = useNavigate();
+  const inputQuery = React.createRef();
 
   React.useEffect(() => {
     if (!queried) {
@@ -17,10 +18,9 @@ function Search() {
   }, [query, queried]);
 
   function handleSearchSubmit(event) {
-    const inputQuery = event.target.elements.search.value;
     event.preventDefault();
     setQueried(true);
-    setQuery(inputQuery);
+    setQuery(event.target.elements.search.value);
   }
 
   return (
@@ -31,6 +31,11 @@ function Search() {
             srcSet={`${logo} 1x, ${logo2x} 2x`}
             alt="Logo Mercado Libre"
             className="logo"
+            onClick={() => {
+              setQuery("");
+              setQueried(false);
+              inputQuery.current.value = "";
+            }}
           ></img>
         </Link>
         <div className="search-box">
@@ -39,8 +44,7 @@ function Search() {
               placeholder="Nunca dejes de buscar"
               id="search"
               className="search-box--form--input"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              ref={inputQuery}
             />
 
             <button type="submit" className="search-box--form--button">
