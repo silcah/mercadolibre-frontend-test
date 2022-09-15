@@ -26,7 +26,7 @@ function ResultSearch() {
   return (
     <>
       {isError ? (
-        <div>
+        <div className="no-result">
           <p>Se produjo un error: </p>
           <pre>{error.message}</pre>
         </div>
@@ -45,7 +45,9 @@ function ResultSearch() {
             </div>
           </div>
         ) : (
-          <p>No se encontraron productos.</p>
+          <div className="no-result">
+            <p>No se encontraron productos.</p>{" "}
+          </div>
         )
       ) : null}
     </>
